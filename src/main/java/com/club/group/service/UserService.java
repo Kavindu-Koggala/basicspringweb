@@ -39,4 +39,14 @@ public class UserService {
         userRepo.delete(modelMapper.map(userDTO,User.class ));
         return true;
     }
+
+    public UserDTO getUserByUserID(String userID){
+        User user=userRepo.getUserByUserID(userID);
+        return modelMapper.map(user,UserDTO.class);
+    }
+
+    public UserDTO getUserByUserIDAndAddress(String userID,String address){
+        User user=userRepo.getUserByUserIDAndAddress(userID,address);
+        return modelMapper.map(user,UserDTO.class);
+    }
 }
